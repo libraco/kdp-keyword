@@ -23,8 +23,6 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
-- This tool was created by [Blogging Informer](https://blogginginformer.com/).
+- This tool was created by [Trackeva](https://trackeva.com/).
 - Hosted by [A2Hosting](https://trackeva.com/a2hosting).
 
-## Contact
-For questions or inquiries, please contact [Blogging Informer](https://blogginginformer.com/contact/).
