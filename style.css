@@ -1,0 +1,318 @@
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 10px; /* Reduced body margin for smaller screens */
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 10px auto; /* Reduced container margin for smaller screens */
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for screens smaller than 768px (typical tablets and phones) */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Further reduced body margin on very small screens */
+    }
+    .container {
+        max-width: 100%; /* Full width on smaller screens */
+        padding: 15px; /* Slightly less padding on smaller screens */
+        margin: 10px; /* Ensure container margin is consistent on small screens */
+    }
+    h1 {
+        font-size: 1.7em; /* Slightly smaller main heading */
+        text-align: center; /* Center heading on smaller screens */
+    }
+    h2 {
+        font-size: 1.3em; /* Slightly smaller step headings */
+        text-align: center; /* Center step headings on smaller screens */
+    }
+    h3 {
+        font-size: 1em; /* Slightly smaller sub-headings */
+    }
+    p, ul li, .note, .disclaimer, .char-counter-input, .keyword-box .char-counter {
+        font-size: 0.9em; /* Smaller font size for text elements */
+    }
+    .actions {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: stretch; /* Make buttons full width */
+    }
+    .actions button {
+        margin-bottom: 10px; /* Add space between stacked buttons */
+    }
+    .keyword-box {
+        flex-direction: column; /* Stack label and input vertically in keyword boxes */
+        align-items: stretch; /* Make items full width */
+    }
+    .keyword-box-label {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 5px; /* Add bottom margin to label */
+        text-align: center; /* Center label text */
+    }
+    .keyword-box input[type="text"], .keyword-box .char-counter, .keyword-box button.copy-btn {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 5px; /* Add bottom margin to input/counter/button */
+    }
+}
+
+h1 {
+    text-align: left; /* Align left */
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2em; /* Slightly larger */
+}
+
+h2 {
+    color: #0056b3; /* Darker blue for headings */
+    margin-top: 30px; /* More space above steps */
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Slightly larger */
+    border-bottom: 1px solid #ddd; /* Slightly darker border */
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1em; /* Consistent size */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 30px 0;
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 8px;
+    padding-left: 20px; /* Indent list items */
+    position: relative;
+    font-size: 1em; /* Consistent size */
+}
+
+/* Custom bullet */
+ul li::before {
+    content: '➤'; /* Arrow bullet */
+    position: absolute;
+    left: 0;
+    color: #007bff; /* Blue bullet */
+    font-size: 1em; /* Match text size */
+    top: 1px; /* Adjust vertical alignment */
+}
+
+textarea#inputKeywords {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    min-height: 120px; /* Taller textarea */
+    margin-bottom: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+/* Focus state for textarea */
+textarea#inputKeywords:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.char-counter-input {
+    font-size: 0.85em;
+    color: #666;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.note {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+button#organizeBtn {
+    padding: 12px 25px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: 1px solid #218838; /* Darker green border */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+    display: inline-block; /* Change to inline-block for better centering if needed */
+    margin: 20px auto; /* Center button if container allows */
+    display: block; /* Keep as block if full width is desired */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
+    background-image: linear-gradient(to bottom, #28a745, #218838); /* Green gradient */
+    border: 1px solid #1e7e34; /* Slightly darker green border */
+}
+
+button#organizeBtn:hover {
+    background-color: #218838; /* Darker green on hover */
+    background-image: linear-gradient(to bottom, #218838, #1e7e34); /* Darker green gradient on hover */
+    border-color: #1c7430; /* Even darker green border on hover */
+}
+
+/* Focus state for organize button */
+button#organizeBtn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Green focus shadow */
+}
+
+
+#keywordBoxesContainer {
+    margin-top: 20px;
+}
+
+.keyword-box {
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #dee2e6;
+    border-radius: 5px; /* Slightly more rounded */
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    transition: background-color 0.3s ease; /* Transition for potential hover effects */
+}
+
+/* Optional: Subtle hover effect for keyword boxes */
+/*
+.keyword-box:hover {
+    background-color: #f1f3f5;
+*/
+.keyword-box:hover {
+    background-color: #f1f3f5; /* Enable hover effect */
+    border-color: #ced4da; /* Slightly darker border on hover */
+}
+
+
+.keyword-box-label {
+    background-color: green; /* Green label */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em; /* Slightly smaller label */
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent label from shrinking */
+    margin-bottom: 5px; /* Margin for wrapping */
+}
+
+.keyword-box input[type="text"] {
+    flex-grow: 1; /* Take remaining space */
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 200px; /* Minimum width before wrapping */
+    margin-right: 10px;
+    margin-bottom: 5px; /* Margin for wrapping */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+/* Focus state for keyword box inputs */
+.keyword-box input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.keyword-box .char-counter {
+    font-size: 0.85em;
+    color: #6c757d;
+    white-space: nowrap; /* Prevent counter text wrapping */
+    margin-right: 10px;
+    margin-bottom: 5px; /* Margin for wrapping */
+}
+
+.keyword-box button.copy-btn {
+    padding: 6px 12px;
+    background-color: #6c757d; /* Grey copy button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem; /* Slightly smaller */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+    margin-bottom: 5px; /* Margin for wrapping */
+}
+
+.keyword-box button.copy-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Focus state for copy buttons */
+.keyword-box button.copy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.5);
+}
+
+#noticeArea {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff3cd; /* Light yellow background */
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    color: #856404; /* Dark yellow text */
+}
+
+#noticeArea h3 {
+    margin-top: 0;
+    color: #856404;
+}
+
+#noticeList {
+    padding-left: 20px; /* Indent notice list */
+    list-style: disc; /* Use standard bullets */
+}
+
+#noticeList li {
+    padding-left: 0; /* Reset padding */
+    margin-bottom: 5px;
+}
+#noticeList li::before {
+    content: ''; /* Remove custom bullet */
+}
+
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #6c757d; /* Grey text */
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
